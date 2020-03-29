@@ -68,6 +68,7 @@ Or you can pull this sample from my Docker Hub. https://hub.docker.com/repositor
        kubectl create -f hpa.yaml
 ```
 Then you can access the web app at http://EXTERNAL-IP-OF-LOAD-BALANCER:8080 in browser
+
 To get EXTERNAL-IP of your load balancer service run following command
        
        kubectl get svc web-app-svc
