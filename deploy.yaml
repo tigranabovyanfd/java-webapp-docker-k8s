@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+  labels:
+    app: web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: web-pod
+      app: web-app
+  template:
+    metadata:
+      name: web-pod
+      labels:
+        name: web-pod
+        app: web-app
+    spec:
+      containers:
+        - name: web-app
+          image: tigranabovyan/sample-java-web-app
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+                cpu: "1000m"
+                memory: "2000Mi"
+            requests:
+                cpu: "100m"
+                memory: "300Mi"
